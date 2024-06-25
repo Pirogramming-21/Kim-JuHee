@@ -1,10 +1,9 @@
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <title>NAVER</title>
     <style>
         :root {
@@ -73,6 +72,9 @@
             --color_shop: #9858f5;
             --color_shop_rgb: 152, 88, 245;
         }
+        * {
+            box-sizing: border-box;
+        }
         html, body {
             margin: 0;
             padding: 0;
@@ -82,48 +84,64 @@
         }
         #wrap-center {
             width: 1280px;
-            background-color: yellow;
             display: inline-block;
+            background-color: yellow;
         }
         #header {
             text-align: left;
             position: relative;
         }
-        #header-hamburger {
-            position: absolute;
-            top: 18px;
-            left: -10px;
+        #header-hamburger, #header-naverpay, #header-notice {
+            position : absolute;
+            top: 5px;        
             padding: 10px;
             display: inline-block;
             background: none;
             border: none;
             cursor: pointer;
         }
-        #header-hamburger:hover::before{
+        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-notice:hover::before{
             position: absolute;
             content: '';
             z-index: 0;
-            left: 1px;
-            top: 1px;
+            left: 4px;
+            top: 4px;
             width: 44px;
             height: 44px;
-            background-color: var(--color_option_bg);
             border-radius: 50%;
+            background-color: #e7eced;
         }
-        #header-hamburger > div {
+        #header-hamburger > div, #header-naverpay > div, #header-notice > div{
             background-image: url(./sp_main.png);
-            width: 26px;
-            height: 26px;
-            position: relative;
             z-index: 1;
+            width: 32px;
+            height: 32px;
+            position: relative;
             background-repeat: no-repeat;
             background-size: 442px 434px;
+        }
+        #header-hamburger {
+            left: -12px;
+        }
+        #header-hamburger > div {
             background-position: -326px -161px;
+        }
+        #header-naverpay {
+            left: 41px;
+        }
+        #header-naverpay > div {
+            background-position: -285px -41px;
+        }
+        #header-notice {
+            right: 42px;
+        }
+        #header-notice > div {
+            background-position: -326px -227px;
         }
         #main {
             height: 2000px;
         }
-        .blind {
+        .hidden {
             position: absolute;
             clip: rect(0 0 0 0);
             width: 1px;
@@ -133,7 +151,6 @@
         }
     </style>
 </head>
-
 <body>
     <div id="wrap">
         <div id="wrap-center">
@@ -141,15 +158,26 @@
                 <button id="header-hamburger">
                     <!-- ::before -->
                     <div></div>
-                    <span class="blind">확장 영역</span>
+                    <span class="hidden">확장 영역</span>
+                    <!-- ::after -->
+                </button>
+                <button id="header-naverpay">
+                    <!-- ::before -->
+                    <div></div>
+                    <span class="hidden">네이버 페이</span>
+                    <!-- ::after -->
+                </button>
+                <button id="header-notice">
+                    <!-- ::before -->
+                    <div></div>
+                    <span class="hidden">알림</span>
                     <!-- ::after -->
                 </button>
             </div>
             <div id="search"></div>
-            <div id="nav"></div>
+            <div id ="nav"></div>
             <div id="main"></div>
         </div>
     </div>
 </body>
-
 </html>
