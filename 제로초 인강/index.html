@@ -1,39 +1,53 @@
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico?1" />
     <title>NAVER</title>
     <style>
-        html, body{
+        html,
+        body {
             margin: 0;
             padding: 0;
         }
         #wrap {
             text-align: center;
         }
-        #wrap-center{
+        #wrap-center {
             width: 1280px;
-            display: inline-block;
             background-color: yellow;
+            display: inline-block;
         }
-        #main{
-            height: 2000px;
+        #header {
+            text-align: left;
         }
-        #header-hamburger{
+        #header-hamburger {
             margin-top: 18px;
-            background-color: blue;
-            width: 46px;
-            height: 46px;
+            padding: 10px;
+            display: inline-block;
+        }
+        #header-hamburger>div {
+            background-image: url(./sp_main.png);
+            width: 26px;
+            height: 26px;
+            background-repeat: no-repeat;
+            background-size: 442px 434px;
+            background-position: -326px -161px;
+        }
+        #main {
+            height: 2000px;
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div id="wrap-center">
             <div id="header">
                 <div id="header-hamburger">
-
+                    <div></div>
                 </div>
             </div>
             <div id="search"></div>
@@ -42,4 +56,5 @@
         </div>
     </div>
 </body>
+
 </html>
