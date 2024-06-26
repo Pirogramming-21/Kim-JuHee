@@ -195,6 +195,20 @@
                     justify-content: center;
                     align-items: center;
                     padding-left: 10px;
+                    position: relative;
+                }
+                #search-svg::after {
+                    display: none;
+                }
+                #search > form:focus-within #search-svg::after {
+                    position: absolute;
+                    display: inline-block;
+                    content: '';
+                    width: 1px;
+                    height: 20px;
+                    background-color: rgb(230, 230, 230);
+                    right: 0;
+                    top: 20px;
                 }
                 #search-svg svg{
                     width: 24px;
