@@ -575,11 +575,11 @@
                     height: 236px;
                 }
                 #main-newstand {
-                    height: 420px;
-                    display:flex;
+                    height: 425.8px;
+                    display: flex;
                     flex-flow: column;
                 }
-                #main-newstand-top {
+                #main-newstand-top, #main-shopping-top {
                     flex: 1;
                     padding: 18px 20px;
                 }
@@ -594,15 +594,15 @@
                     border-radius: 50%;
                     vertical-align: 5px;
                 }
-                #main-newstand-top .dot, #main-newstand-top .slash {
+                .left-section .dot, .left-section .slash {
                     color: rgba(8, 8, 8, .5);
                     font-weight: 800;
                 }
-                #main-newstand-top .slash {
+                .left-section .slash {
                     position: relative;
                     padding-left: 26px;
                 }
-                #main-newstand-top .slash::before {
+                .left-section .slash::before {
                     content: '';
                     display: inline-block;
                     position: absolute;
@@ -614,23 +614,23 @@
                     background-color: var(--color_dot_divider);
                     transform: skewX(-15deg);
                 }
-                #main-newstand header{
-                    color: rgba(8, 8, 8, .5);
+                .left-section header {
                     font-size: 1.6rem;
+                    color: rgba(8, 8, 8, .5);
                     display: flex;
                     justify-content: flex-start;
                     line-height: 23px;
                     margin-bottom: 17px;
                 }
-                #main-newstand header .bold {
+                .left-section header .bold {
                     font-weight: bold;
-                    color:black;
+                    color: black;
                 }
                 #main-newstand-gray {
-                    display:flex;
+                    display: flex;
                     justify-content: flex-start;
                     height: 50px;
-                    padding:12px 20px;
+                    padding: 12px 20px;
                     background-color: var(--color_option_bg);
                     border-radius: 4px;
                     font-size: 1.4rem;
@@ -658,6 +658,9 @@
                     display: inline-block;
                     margin: 10px 0 0 5px;
                     vertical-align: 3px;
+                }
+                #main-newstand a {
+                    text-decoration: none;
                 }
                 #main-newstand-animation {
                     padding-left: 25px;
@@ -717,35 +720,32 @@
                     background-color: #d3d5d7;
                     background-color: var(--color_dot_divider);
                 }
-                #main-newstand a {
-                    text-decoration: none;
-                }
-                #main-newstand a:visited {
-                    color:inherit;
+                #main-newstand a :visited {
+                    text-decoration: inherit;
                 }
                 #main-newstand a:hover {
                     text-decoration: underline;
                 }
                 #main-newstand-grid {
                     display: grid;
-                    grid-gap: 1px;
-                    background-color: var(--color_border_in);
                     justify-content: center;
                     align-items: center;
+                    grid-gap: 1px;
+                    background-color: var(--color_border_in);;
                     grid-template-rows: 56px 56px 56px 56px;
                     grid-template-columns: 131.27px 131.27px 131.27px 131.27px 131.27px 131.27px;
                     border: 1px solid var(--color_border_in);
                     border-radius: 4px;
-                    margin: 18px 20px 18px 20px;
+                    margin-top: 18px;
                 }
                 #main-newstand-grid > div {
                     height: 100%;
                     background-color: white;
                     display: flex;
-                    justify-content:center;
+                    justify-content: center;
                     align-items: center;
                 }
-                #main-newstand footer {
+                .left-section footer {
                     border-top: 1px solid var(--color_border_in);
                     padding: 10px 0 11px;
                     font-size: 1.3rem;
@@ -795,10 +795,7 @@
                     width: 20px;
                     height: 20px;
                 }
-                #main-newstand footer .prev::before {
-                    transform: rotate(180deg);
-                }
-                #main-newstand footer .prev, #main-newstand footer .next {
+                .left-section footer .prev, .left-section footer .next {
                     background: none;
                     border: none;
                     content: '';
@@ -816,7 +813,10 @@
                     justify-content: center;
                     align-items: center;
                 }
-                #main-newstand footer .prev::before, #main-newstand footer .next::before {
+                .left-section footer .prev::before {
+                    transform: rotate(180deg);
+                }
+                .left-section footer .prev::before, .left-section footer .next::before {
                     content: "";
                     display: block;
                     background-image: url(https://pm.pstatic.net/resources/asset/sp_main.712d35ae.png);
@@ -826,21 +826,49 @@
                     width: 10px;
                     height: 12px;
                 }
-                #main-newstand footer .text {
+                .left-section footer .text {
                     padding: 0 16px;
                     min-width: 156px;
                 }
-                #main-newstand footer .news {
+                .left-section footer .hot {
+                    color: #9858f5;
+                }
+                .left-section footer .news {
                     color: var(--color_news);
                 }
-                #main-newstand footer .total {
+                .left-section footer .total {
                     color: rgba(96, 96, 96, .5);
+                }
+                #main-shopping {
+                    height: 559.8;
+                    display: flex;
+                    flex-flow: column;
+                } 
+                #main-shopping-top {
+                    padding-top: 19px;
+                }
+                #main-shopping footer .text {
+                    min-width: 176px;
+                }
+                #main-shopping-gray {
+                    display: flex;
+                }
+                #main-shopping-gray .left {
+                    width: 668px;
+                    height: 50px;
+                    padding: 15px 20px 14px;
+                    display: flex;
+                    background-color: var(--color_option_bg);
+                }
+                #main-shopping-gray .right {
+                    margin-left: auto;
+                    padding: 10px 0;
                 }
             </style>
             <main id="main">
                 <div id="main-left">
                     <aside id="main-left-ad"></aside>
-                    <section id="main-newstand">
+                    <section id="main-newstand" class="left-section">
                         <div id="main-newstand-top">
                             <header>
                                 <a href="#" class="bold">뉴스스탠드</a>
@@ -897,7 +925,38 @@
                             <button class="grid"><span class="blind">격자보기</span></button>
                         </footer>
                     </section>
-                    <section id="main-shopping"></section>
+                    <section id="main-shopping" class="left-section">
+                        <div id="main-shopping-top">
+                            <header>
+                                <a href="#" class="bold">쇼핑</a>
+                                <a href="#" class="slash">맨즈</a>
+                                <a href="#" class="slash">원쁠딜</a>
+                                <a href="#" class="slash">쇼핑라이브</a>
+                            </header>
+                            <div id="main-shopping-gray">
+                                <div class="left">
+                                    <a href="#">오늘의 혜택</a>
+                                    <div id="main-newstand-animation">
+                                        <a href="#">네이버 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</a>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <span>1</span>
+                                    <span>18</span>
+                                    <button class="prev"><span class="blind">이전페이지</span></button>
+                                    <button class="next"><span class="blind">다음페이지</span></button>
+                                </div>
+                            </div>
+                            <div id="main-shopping-grid">
+                                
+                            </div>
+                        </div>
+                        <footer>
+                            <button class="prev"><span class="blind">이전 페이지</span></button>
+                            <div class="text"><span class="hot">쇼핑핫아이템</span>&nbsp;&nbsp;더보기 1<span class="total">/18</span></div>
+                            <button class="next"><span class="blind">다음 페이지</span></button>
+                        </footer>
+                    </section>
                 </div>
                 <div id="main-right">
                     <section id="main-login">
