@@ -5,12 +5,12 @@ body {
 
 .max-width-1200 {
     width: min(1200px, 100%);
-    padding: 0 40px;
+    padding: 40px 40px 0 40px;
     margin: auto;
 }
 
 .avoid-nav {
-    padding-top: var(--header-height);
+    padding-top: calc(var(--header-height) + 20px); /* 헤더 높이 + 추가 간격 */
 }
 
 .section-th {
@@ -18,10 +18,11 @@ body {
     height: 40px;
     font-size: var(--body1);
     margin-bottom: var(--gutter);
+    margin-top: 120px;
 }
 
 .section-th--curr {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .flex_between {

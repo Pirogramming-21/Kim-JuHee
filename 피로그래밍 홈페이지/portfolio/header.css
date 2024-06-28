@@ -56,3 +56,12 @@ main {
 .main-header--container>ul>li:hover {
   transform: translateY(-3px);
 }
+
+@media screen and (max-width: 900px){
+  .main-header--container>ul {
+    color: black;
+  }
+  .main-header--container>ul li:nth-child(3) a {
+    color: black;
+  }
+}
