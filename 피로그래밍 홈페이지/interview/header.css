@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    color: white;
+  }
+  
+  main {
+    min-height: 100vh;
+    background-color: gray;
+  }
+  
+  #main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0) 100%);
+    position: fixed;
+    padding: 0 var(--offset);
+    z-index: 1000;
+    /* 헤더의 z-index 값 설정 */
+  }
+  
+  .main-header--container h1 {
+    text-align: left;
+    /* 이미지를 좌측 정렬 */
+  }
+  
+  .main-header--container {
+    width: min(100%, 1200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+    height: 100%;
+  }
+  
+  .main-header--container>ul {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .main-header--container>ul li:nth-child(4) a {
+    color: var(--green);
+  }
+  
+  .main-header--container>ul>li:hover {
+    transform: translateY(-3px);
+  }
