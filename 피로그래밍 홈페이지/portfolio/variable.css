@@ -1,7 +1,7 @@
 :root {
     --gutter: 1.6rem;
-    --offset: 4rem;
+    --offset: 2.5rem;
     --green: #0bec12;
     --gray: #333333;
-    --header-height: 9rem;
+    --header-height: 7rem;
   }

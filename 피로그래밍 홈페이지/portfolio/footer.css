@@ -1,0 +1,81 @@
+#footer-top {
+    padding: var(--offset);
+}
+footer {
+    background-color: var(--gray);
+    width: 100%;
+    font-size: var(--body2);
+}
+.max-width-1200 {
+    width: min(1200px, 100%);
+    padding: 0 40px;
+    margin: auto;
+}
+.footer-container {
+    display: flex;
+}
+#footer-top .footer--contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 100px;
+}
+#footer-top .footer--contact li {
+    position: relative;
+}
+#footer-top .footer--contact li a, #footer-top .footer--contact li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#footer-top .footer--contact li a {
+    line-height: 2rem;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+.footer--contact li:hover,
+.footer--nav li:hover {
+    transform: translateY(-2px) !important;
+    transition: transform 0.3s ease !important; /* 부드러운 전환 효과 */
+}
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.emoji {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+}
+.emoji img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#footer-top .footer--nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+#footer-top .footer--nav li:not(:last-child) {
+    border-right: 1px solid var(--line-gray);
+}
+#footer-top .footer--nav li {
+    padding: 0 2rem;
+    position: relative;
+}
+
+#footer-bottom {
+    opacity: 0.8;
+    font-size: var(--caption);
+    text-align: center;
+    padding: 1.3rem;
+    font-size: 13px;
+}
