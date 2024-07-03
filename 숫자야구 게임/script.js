@@ -48,7 +48,7 @@ function check_numbers() {
     const num3 = document.getElementById('number3').value;
 
     if (num1 === '' || num2 === '' || num3 === '') {
-        alert("Please enter all three numbers.");
+        alert("숫자를 세 개 모두 입력해주세요!");
         clearInputs();
         return;
     }
