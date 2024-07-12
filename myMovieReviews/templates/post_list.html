@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="list_header">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Reviews</title>
+    <link rel="stylesheet" href="{% static 'posts/styles_list.css' %}">
+</head>
+
+<body class="list_body">
+
+    <h1 class="list_h1">🎥my<span>Movie</span>Reviews
+        <a href="/posts/create" class="list_link">Add a New review</a>
+    </h1>
+    <hr>
+
+    <div class="post-grid">
+        {% for post in posts %}
+            <div class="post-card">
+                <a href="/posts/{{ post.id }}">
+                    <img src="https://via.placeholder.com/200x300.png?text=Sample+Image" alt="{{ post.title }}" class="post-image">
+                    <h2>{{ post.title }}</h2>
+                </a>
+                <p>개봉년도 {{ post.year }}</p>
+                <p>장르 {{ post.genre }}</p>
+                <p>별점 {{ post.rating }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

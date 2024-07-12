@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="create_header">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Movie Reviews</title>
+  <link rel="stylesheet" href="{% static 'posts/styles_create.css' %}">
+</head>
+
+<body>
+
+  <h1 class="create_h1">🎥my<span>Movie</span>Reviews
+    <a href="/posts/create" class="create_link">Add a New review</a>
+  </h1>
+
+  <div class="create_inner">
+    <h2>Movie <span>review</span>🍿</h2>
+    <form action="/posts/create" method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" placeholder="제목" />
+      </div>
+      <div class="form-group">
+        <label for="year">개봉년도:</label>
+        <input type="text" id="year" name="year" placeholder="개봉년도" />
+      </div>
+      <div class="form-group">
+        <label for="genre">장르:</label>
+        <select id="genre" name="genre">
+          <option value="">장르 선택</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Drama">Drama</option>
+          <option value="Horror">Horror</option>
+          <option value="Romance">Romance</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="rating">별점:</label>
+        <input type="text" id="rating" name="rating" placeholder="별점" />
+      </div>
+      <div class="form-group">
+        <label for="runtime">러닝타임:</label>
+        <input type="text" id="runtime" name="runtime" placeholder="러닝타임" />
+      </div>
+      <div class="form-group">
+        <label for="review">리뷰:</label>
+        <textarea id="review" name="review" cols="30" rows="10" placeholder="리뷰"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="director">감독:</label>
+        <input type="text" id="director" name="director" placeholder="감독" />
+      </div>
+      <div class="form-group">
+        <label for="actors">배우:</label>
+        <input type="text" id="actors" name="actors" placeholder="배우" />
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Save">
+      </div>
+    </form>
+  </div>
+
+  </form>
+
+</body>
