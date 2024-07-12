@@ -7,6 +7,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+
 .list_h1 {
     font-size: 2em;
     color: black; 
@@ -18,6 +23,7 @@ body {
     display: flex;
 
     width: 80%;
+    font-weight: bolder;
 }
 
 .list_h1 span {
@@ -70,6 +76,7 @@ body {
     text-shadow: 0 0 0 transparent;
     font-weight: bold;
     border-bottom-style: none;
+    color: black;
 }
 
 .post-card p {

@@ -7,6 +7,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .detail_h1 {
     font-size: 2em;
     color: black; 
@@ -18,16 +22,20 @@ body {
     display: flex;
 
     width: 80%;
+    font-weight: bolder;
 }
 
-.detail_h1 span {
+.detail_h1 .h1{
+    text-decoration: none !important; ;
+}
+
+.detail_h1 a span {
     color: #cb436e;
 }
 
-.detail_link {
+.detail_h1 .detail_link {
     font-size: 0.5em;
     color: black;
-    text-decoration: none;
     margin-left: auto;
     margin-right: 10px;
     justify-content: space-between;
@@ -62,7 +70,6 @@ body {
 }
 
 .post-header a {
-    text-decoration: none;
     color: gray;
     font-size: 0.82rem;
 }

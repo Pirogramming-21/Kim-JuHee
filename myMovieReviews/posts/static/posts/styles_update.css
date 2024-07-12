@@ -18,6 +18,7 @@ body {
     display: flex;
 
     width: 80%;
+    font-weight: bolder;
 }
 
 .update_h1 span {
@@ -48,9 +49,10 @@ body {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
+    font-weight: bolder;
 }
 
-.create_inner h2 span {
+.update_inner h2 span {
     color: #cb436e;
 }
 
@@ -68,9 +70,9 @@ body {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
-    margin: 0px 20px;
-    padding: 10px 50px;
+    width: 92%;
+    margin: 0px 40px;
+    padding: 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;

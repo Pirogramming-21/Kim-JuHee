@@ -13,13 +13,13 @@
 
 <body>
 
-  <h1 class="create_h1">🎥my<span>Movie</span>Reviews
+  <h1 class="create_h1">🎥Juhee<span>Movie</span>Reviews
     <a href="/posts/create" class="create_link">Add a New review</a>
   </h1>
   <hr>
 
   <div class="create_inner">
-    <h2>Movie <span>review</span>🍿</h2>
+    <h2>🍿Movie <span>review</span>🍿</h2>
     <form action="/posts/create" method="post">
       {% csrf_token %}
       <div class="form-group">
@@ -39,6 +39,7 @@
           <option value="Drama">Drama</option>
           <option value="Horror">Horror</option>
           <option value="Romance">Romance</option>
+          <option value="Musical">Musical</option>
         </select>
       </div>
       <div class="form-group">

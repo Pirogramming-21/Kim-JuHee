@@ -6,15 +6,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 세부사항</title>
+  <title>My Movie Reviews</title>
   <link rel="stylesheet" href="{% static 'posts/styles_detail.css' %}">
   <link rel="stylesheet" href="{% static 'posts/reset.css' %}">
 </head>
 
 <body>
-  <h1 class="detail_h1">🎥my<span>Movie</span>Reviews
+  <h1 class="detail_h1">
+    <a href="/posts/" class="h1">🎥Juhee<span>Movie</span>Reviews</a>
     <a href="/posts/create" class="detail_link">Add a New review</a>
   </h1>
+
   <hr>
 
   <div class="post-container">
@@ -37,8 +39,8 @@
         <p><strong>감독:</strong> {{ post.director }}</p>
         <p><strong>주연:</strong> {{ post.actors }}</p>
         <p><strong>장르:</strong> {{ post.genre }}</p>
-        <p><strong>별점:</strong> {{ post.rating }}</p>
-        <p><strong>러닝타임:</strong> {{ post.runtime }}</p>
+        <p><strong>별점:</strong> {{ post.rating }}점</p>
+        <p><strong>러닝타임:</strong> {{ post.runtime }}분</p>
       </div>
     </div>
     <div class="post-review">
@@ -46,8 +48,17 @@
     </div>
 
     <div class="post-navigation">
-      <a href="/posts/{{ previous_post_id }}">이전 리뷰 보기</a>
-      <a href="/posts/{{ next_post_id }}">다음 리뷰 보기</a>
+      {% if previous_post_id %}
+      <a href="/posts/{{ previous_post_id }}">⬅️ 이전 리뷰</a>
+      {% else %}
+      <span></span>
+      {% endif %}
+
+      {% if next_post_id %}
+      <a href="/posts/{{ next_post_id }}">다음 리뷰 ➡️</a>
+      {% else %}
+      <span></span>
+      {% endif %}
     </div>
   </div>
 </body>
