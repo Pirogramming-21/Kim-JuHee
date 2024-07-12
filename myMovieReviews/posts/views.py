@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Post, Comment
+from .models import Post
 
 # Create your views here.
 def post_list(request):
@@ -20,7 +20,8 @@ def post_create(request):
             runtime=request.POST.get("runtime"),
             review=request.POST.get("review"),
             director=request.POST.get("director"),
-            actors=request.POST.get("actors")
+            actors=request.POST.get("actors"),
+            image_url=request.POST.get("image_url")
         )
         return redirect("/posts")
     return render(request, 'post_create.html')
@@ -49,6 +50,7 @@ def post_update(request, pk):
         post.review = request.POST["review"]
         post.director = request.POST["director"]
         post.actors = request.POST["actors"]
+        post.image_url = request.POST["image_url"]
         
         post.save()
         
@@ -64,14 +66,4 @@ def post_delete(request, pk):
         post = get_object_or_404(Post, id=pk)
         post.delete()
         return redirect("/posts")
-    return HttpResponse("Invalid request method.", status=405)
-
-def comment_create(request, pk):
-    if request.method == 'POST':
-        post = get_object_or_404(Post, id=pk)
-        Comment.objects.create(
-            post=post,
-            content=request.POST["content"]
-        )
-        return redirect(f"/posts/{pk}")
     return HttpResponse("Invalid request method.", status=405)

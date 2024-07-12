@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-.create_h1 {
+.update_h1 {
     font-size: 2em;
     color: black; 
     margin-top: 20px;
@@ -20,11 +20,11 @@ body {
     width: 80%;
 }
 
-.create_h1 span {
+.update_h1 span {
     color: #cb436e;
 }
 
-.create_link {
+.update_link {
     font-size: 0.5em;
     color: black;
     text-decoration: none;
@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
 }
 
-.create_inner {
+.update_inner {
     background-color: #f0ddea;
     margin-top: 30px;
     padding: 20px 40px;
@@ -44,7 +44,7 @@ body {
     display: grid;
 }
 
-.create_inner h2 {
+.update_inner h2 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
@@ -76,7 +76,7 @@ body {
     box-sizing: border-box;
 }
 
-.form-group input[type="submit"] {
+input[type="submit"] {
     background-color: #cb436e;
     color: white;
     border: none;

@@ -1,35 +1,55 @@
-<h1>글 세부사항</h1>
+{% load static %}
 
-<h1>{{ post.title }}</h1>
-<small>작성자: {{ post.user }}</small>
-<br />
-<p>{{ post.content }}</p>
-<br />
+<!DOCTYPE html>
+<html lang="en">
 
-<a href="/posts/{{ previous_post_id }}"> 이전글로 가기 </a>
-<br>
-<a href="/posts/{{ next_post_id }}"> 다음글로 가기 </a>
-<br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 세부사항</title>
+  <link rel="stylesheet" href="{% static 'posts/styles_detail.css' %}">
+  <link rel="stylesheet" href="{% static 'posts/reset.css' %}">
+</head>
 
-<a href="/posts/{{ post.id }}/update"> 수정하기 </a>
+<body>
+  <h1 class="detail_h1">🎥my<span>Movie</span>Reviews
+    <a href="/posts/create" class="detail_link">Add a New review</a>
+  </h1>
+  <hr>
 
-<form action="/posts/{{ post.id }}/delete" method="post">
-  {% csrf_token %}
-  <input type="submit" value="삭제하기">
-</form>
+  <div class="post-container">
+    <div class="post-header">
+      <h2>{{ post.title }}</h2>
+      <div class="post-actions">
+        <a href="/posts/{{ post.id }}/update">수정</a>
+        <form action="/posts/{{ post.id }}/delete" method="post" style="display: inline;">
+          {% csrf_token %}
+          <input type="submit" value="삭제" style="background: none; border: none; color: gray; cursor: pointer">
+        </form>
+      </div>
+    </div>
 
-<h1> 댓글 작성하기 </h1>
-<form action="/posts/{{ post.id }}/comment/create" method="post">
-  {% csrf_token %}
-  <textarea name="content" cols="30" rows="2" placeholder="내용"></textarea>
-  <div>
-    <input type="submit" value="작성완료">
+
+    <div class="post-content">
+      <img src="{{ post.image_url }}" alt="{{ post.title }}">
+      <div class="post-meta">
+        <p><strong>개봉년도:</strong> {{ post.year }}</p>
+        <p><strong>감독:</strong> {{ post.director }}</p>
+        <p><strong>주연:</strong> {{ post.actors }}</p>
+        <p><strong>장르:</strong> {{ post.genre }}</p>
+        <p><strong>별점:</strong> {{ post.rating }}</p>
+        <p><strong>러닝타임:</strong> {{ post.runtime }}</p>
+      </div>
+    </div>
+    <div class="post-review">
+      <p>{{ post.review }}</p>
+    </div>
+
+    <div class="post-navigation">
+      <a href="/posts/{{ previous_post_id }}">이전 리뷰 보기</a>
+      <a href="/posts/{{ next_post_id }}">다음 리뷰 보기</a>
+    </div>
   </div>
-</form>
+</body>
 
-<h2>댓글 목록</h2>
-{% for comment in comments %}
-<p>{{ comment.id }}. {{ comment.content }}</p>
-{% endfor %}
-
-
+</html>

@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Movie Reviews</title>
     <link rel="stylesheet" href="{% static 'posts/styles_list.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/reset.css' %}">
 </head>
 
-<body class="list_body">
+<body>
 
     <h1 class="list_h1">🎥my<span>Movie</span>Reviews
         <a href="/posts/create" class="list_link">Add a New review</a>
@@ -21,7 +22,7 @@
         {% for post in posts %}
             <div class="post-card">
                 <a href="/posts/{{ post.id }}">
-                    <img src="https://via.placeholder.com/200x300.png?text=Sample+Image" alt="{{ post.title }}" class="post-image">
+                    <img src="{{ post.image_url }}" alt="{{ post.title }}" class="post-image">
                     <h2>{{ post.title }}</h2>
                 </a>
                 <p>개봉년도 {{ post.year }}</p>

@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Movie Reviews</title>
   <link rel="stylesheet" href="{% static 'posts/styles_create.css' %}">
+  <link rel="stylesheet" href="{% static 'posts/reset.css' %}">
 </head>
 
 <body>
@@ -15,6 +16,7 @@
   <h1 class="create_h1">🎥my<span>Movie</span>Reviews
     <a href="/posts/create" class="create_link">Add a New review</a>
   </h1>
+  <hr>
 
   <div class="create_inner">
     <h2>Movie <span>review</span>🍿</h2>
@@ -58,6 +60,10 @@
       <div class="form-group">
         <label for="actors">배우:</label>
         <input type="text" id="actors" name="actors" placeholder="배우" />
+      </div>
+      <div class="form-group">
+        <label for="image_url">이미지 URL:</label>
+        <input type="text" id="image_url" name="image_url" placeholder="이미지 URL" required /> <br />
       </div>
       <div class="form-group">
         <input type="submit" value="Save">

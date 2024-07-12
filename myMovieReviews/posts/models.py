@@ -10,7 +10,4 @@ class Post(models.Model):
     review = models.TextField()
     director = models.CharField(max_length=100)
     actors = models.CharField(max_length=200)
-
-class Comment(models.Model):
-    post=models.ForeignKey(Post, on_delete=models.CASCADE)
-    content=models.TextField()
+    image_url = models.URLField(max_length=2000, default="https://via.placeholder.com/150")
