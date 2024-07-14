@@ -1,5 +1,15 @@
-## ERD 사진과 링크 첨부합니다. 
+## ERD 스크린샷과 링크 첨부합니다!
 
-https://www.erdcloud.com/d/hAdJgraCSHFbSHxtA
+🔥유저엔티티에 주소를 도, 시, 구를 목록에서 선택하고 가입할 수 있게 엔티티를 추가/변경 하고 기존주소 속성은 상세주소로 바꾸기 </br>
+🔥댓글기능을 댓글과 대댓글이 가능하도록 엔티티 변경 </br>
+🔥커뮤니티게시판에 해시태그 기능과 유저태그기능 구현을 위한 엔티티 추가/변경 </br>
+🔥유저끼리의 팔로잉 팔로워 기능구현을 위한 엔티티 추가/변경 </br>
+🔥댓글에서 회원태그 기능 구현을 위한 엔티티 추가 </br>
+</br>
+</br>
 
+➡️ https://www.erdcloud.com/d/hAdJgraCSHFbSHxtA
 
+</br>
+
+![스크린샷 2024-07-15 003327](https://github.com/user-attachments/assets/0f994afc-f8db-4820-8c29-fe85fa49af2b)
