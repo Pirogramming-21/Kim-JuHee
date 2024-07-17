@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div>
+    <form method="get" action=".">
+        <label for="sort">정렬 기준:</label>
+        <select name="sort" id="sort" onchange="this.form.submit()">
+            <option value="">--정렬기준--</option>
+            <option value="likes" {% if request.GET.sort == 'likes' %}selected{% endif %}>찜하기순</option>
+            <option value="name" {% if request.GET.sort == 'name' %}selected{% endif %}>이름순</option>
+            <option value="created" {% if request.GET.sort == 'created' %}selected{% endif %}>등록순</option>
+            <option value="latest" {% if request.GET.sort == 'latest' %}selected{% endif %}>최신순</option>
+        </select>
+    </form>
+</div>
+
+<div class="post-grid">
+    {% for post in posts %}
+    <div class="post-card">
+        <a href="/posts/{{ post.id }}">
+            <img src="{{ post.image_url }}" alt="{{ post.title }}" class="post-image">
+            <button class="star-button" data-post-id="{{ post.id }}">
+                {% if post.id in starred_posts %}
+                ★
+                {% else %}
+                ☆
+                {% endif %}
+            </button>
+            <h2>{{ post.title }}</h2>
+        </a>
+        <p>예상 개발 툴: {{ post.genre }}</p>
+        <p>아이디어 관심도: <span class="rating" data-post-id="{{ post.id }}">{{ post.rating }}</span></p>
+        <button class="interest-button" data-post-id="{{ post.id }}" data-action="increment">+</button>
+        <button class="interest-button" data-post-id="{{ post.id }}" data-action="decrement">-</button>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const starButtons = document.querySelectorAll('.star-button');
+        starButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const postId = this.getAttribute('data-post-id');
+                fetch(`/posts/${postId}/toggle_star/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                    credentials: 'same-origin',
+                }).then(response => response.json()).then(data => {
+                    if (data.starred) {
+                        this.textContent = '★';
+                    } else {
+                        this.textContent = '☆';
+                    }
+                });
+            });
+        });
+
+        const interestButtons = document.querySelectorAll('.interest-button');
+        interestButtons.forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                const postId = this.getAttribute('data-post-id');
+                const action = this.getAttribute('data-action');
+                fetch(`/posts/${postId}/update_interest/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    credentials: 'same-origin',
+                    body: new URLSearchParams({
+                        'action': action
+                    })
+                }).then(response => response.json()).then(data => {
+                    const ratingElement = document.querySelector(`.rating[data-post-id="${postId}"]`);
+                    ratingElement.textContent = data.new_rating;
+                });
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div class="post-container">
+    <div class="post-header">
+        <h2>Idea Detail</h2>
+        <div class="post-actions">
+
+        </div>
+    </div>
+
+    <div class="post-content">
+        <div class="image-container">
+            <img src="{{ post.image_url }}" alt="{{ post.title }}">
+            <button class="star-button" data-post-id="{{ post.id }}">
+                {% if is_starred %}
+                ★
+                {% else %}
+                ☆
+                {% endif %}
+            </button>
+        </div>
+        <div class="post-meta">
+            <p><strong>아이디어 제목:</strong> {{ post.title }}</p>
+            <p><strong>아이디어 관심도:</strong> {{ post.rating }}</p>
+            <p><strong>예상 개발 툴:</strong>
+                {% if post.tool %}
+                <a href="{% url 'tools:tool_detail' post.tool.pk %}">{{ post.genre }}</a>
+                {% else %}
+                {{ post.genre }}
+                {% endif %}
+            </p>
+            <p><strong>아이디어 설명:</strong> {{ post.review }}</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <form action="/posts/{{ post.id }}/delete" method="post">
+            {% csrf_token %}
+            <input type="submit" value="삭제" class="button delete-button">
+        </form>
+        <form action="/posts">
+            {% csrf_token %}
+            <input type="submit" value="목록" class="button list-button">
+        </form>
+        <form action="/posts/{{ post.id }}/update" method="get">
+            <input type="submit" value="수정" class="button update-button">
+        </form>
+    </div>
+
+    <div class="post-navigation">
+        {% if previous_post_id %}
+        <a href="/posts/{{ previous_post_id }}">⬅️ 이전 아이디어 보기</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+
+        {% if next_post_id %}
+        <a href="/posts/{{ next_post_id }}">다음 아이디어 보기 ➡️</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const starButton = document.querySelector('.star-button');
+        starButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            const postId = this.getAttribute('data-post-id');
+            fetch(`/posts/${postId}/toggle_star/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                credentials: 'same-origin',
+            }).then(response => response.json()).then(data => {
+                if (data.starred) {
+                    this.textContent = '★';
+                } else {
+                    this.textContent = '☆';
+                }
+            });
+        });
+    });
+</script>

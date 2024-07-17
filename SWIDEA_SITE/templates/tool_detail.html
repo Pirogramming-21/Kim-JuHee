@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div class="post-container">
+    <div class="post-header">
+        <h2>Tool Detail</h2>
+        <div class="post-actions">
+            
+        </div>
+    </div>
+
+    <div class="post-content">
+        <div class="post-meta">
+            <p><strong></strong> {{ tool.name }}</p>
+            <p><strong></strong> {{ tool.kindof }}</p>
+            <p><strong></strong> {{ tool.descrip }}</p>
+        </div>
+    </div>
+    
+    <div class="button-container">
+        <form action="/tools/{{ tool.id }}/delete" method="post">
+            {% csrf_token %}
+            <input type="submit" value="삭제" class="button delete-button">
+        </form>
+        <form action="/tools">
+            {% csrf_token %}
+            <input type="submit" value="목록" class="button list-button">
+        </form>
+        <form action="/tools/{{ tool.id }}/update" method="get">
+            <input type="submit" value="수정" class="button update-button">
+        </form>
+    </div>
+
+    <div class="post-navigation">
+        {% if previous_post_id %}
+        <a href="/tools/{{ previous_tool_id }}">⬅️ 이전 아이디어 보기</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+
+        {% if next_post_id %}
+        <a href="/tools/{{ next_tool_id }}">다음 아이디어 보기 ➡️</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

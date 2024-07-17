@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div class="update_inner">
+    <h2>💡Idea Detail<span> Update</span>💡</h2>
+    <form action="/posts/{{ post.id }}/update" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">아이디어명:</label>
+            <input type="text" id="title" name="title" placeholder="제목" value="{{ post.title }}" required /> <br />
+        </div>
+        <div class="form-group">
+            <label for="image_url">이미지 URL:</label>
+            <input type="text" id="image_url" name="image_url" placeholder="이미지 URL" value="{{ post.image_url }}" required /> <br />
+        </div>
+        <div class="form-group">
+            <label for="review">아이디어 설명:</label>
+            <textarea id="review" name="review" cols="30" rows="10" placeholder="리뷰" required>{{ post.review }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">아이디어 관심도:</label>
+            <input type="text" id="rating" name="rating" placeholder="별점" value="{{ post.rating }}" required />
+            <br />
+        </div>
+        <div class="form-group">
+            <label for="genre">예상 개발툴:</label>
+            <select id="genre" name="genre">
+                <option value="">---------</option>
+                <option value="Django" {% if post.genre == "Django" %}selected{% endif %}>Django</option>
+                <option value="Spring" {% if post.genre == "Spring" %}selected{% endif %}>Spring</option>
+                <option value="React" {% if post.genre == "React" %}selected{% endif %}>React</option>
+                <option value="HTML" {% if post.genre == "HTML" %}selected{% endif %}>HTML</option>
+                <option value="CSS" {% if post.genre == "CSS" %}selected{% endif %}>CSS</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</div>
+{% endblock %}

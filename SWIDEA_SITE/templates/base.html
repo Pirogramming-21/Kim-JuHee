@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Create Idea{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'posts/base.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/reset.css' %}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- Your navbar code here -->
+        <h1 class="nav_h1">💡My&nbsp;<span>SW&nbsp;Idea</span>&nbsp;Manage
+            <a href="/posts/create" class="nav_link">아이디어 등록</a>
+            <a href="/posts" class="nav_link">아이디어 관리</a>
+            <a href="/tools/create" class="nav_link">개발툴 등록</a>
+            <a href="/tools" class="nav_link">개발툴 관리</a>
+        </h1>
+    </nav>
+
+
+    {% block content %}
+    <!-- This is where the content of child templates will be inserted -->
+    {% endblock %}
+
+</body>
+
+</html>

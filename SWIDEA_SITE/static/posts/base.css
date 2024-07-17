@@ -1,0 +1,419 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navbar.css */
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav_h1 {
+    font-size: 2em;
+    color: black;
+    margin: 10px 30px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: calc(100% - 60px);
+    font-weight: bolder;
+}
+
+.nav_h1 span {
+    color: #cb436e;
+}
+
+.nav_link {
+    font-size: 0.5em;
+    color: black;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: 10px;
+    justify-content: space-between;
+}
+
+/* list.css */
+.list_h1 {
+    font-size: 2em;
+    color: black; 
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    width: 80%;
+    font-weight: bolder;
+}
+
+.list_h1 span {
+    color: #cb436e;
+}
+
+.list_link {
+    font-size: 0.5em;
+    color: black;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: 10px;
+    justify-content: space-between;
+}
+
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    width: 100%;
+    max-width: 1310px;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+.post-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.post-card h2{
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 10px 0px;
+    text-shadow: 0 0 0 transparent;
+    font-weight: bold;
+    border-bottom-style: none;
+    color: black;
+}
+
+.post-card p {
+    margin: 5px 10px;
+    color: #555;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.post-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.star-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;  
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: gold; 
+    cursor: pointer;
+}
+
+.star-button:focus {
+    outline: none;
+}
+
+.star-button:hover {
+    color: darkorange;
+}
+
+/* create.css */
+.create {
+    width: 100%;
+    display: contents;
+}
+
+.create_inner {
+    background-color: #f0ddea;
+    margin-top: 30px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* 너비를 80%로 설정 */
+    max-width: 800px; /* 최대 너비를 800px로 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* 패딩을 너비에 포함 */
+}
+
+
+.create_inner h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.create_inner h2 span {
+    color: #cb436e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0px 50px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 92%;
+    margin: 0px 40px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="submit"] {
+    background-color: #cb436e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #a12d53;
+}
+
+/* detail.css */
+.post-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    max-width: 1170px;
+    width: 100%;
+    margin: 20px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post-header h2{
+    font-size: 25px;
+    font-weight: bold; 
+    color: lightgreen;
+    padding: 10px 0px;
+}
+
+.post-header a {
+    color: gray;
+    font-size: 0.82rem;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px
+}
+
+.post-review {
+    position: relative;
+    flex: 1 1 calc(50% - 10px);
+    padding: 20px 0px;
+    line-height: 1.6;
+}
+
+.post-content {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.image-container {
+    position: relative;
+    width: 190px; 
+}
+
+.post-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.post-navigation {
+    size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.post-navigation a {
+    text-decoration: none;
+}
+
+.comments-section {
+    margin-top: 20px;
+}
+
+.comments-section form {
+    margin-bottom: 20px;
+}
+
+.comments-section textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.comments-section input[type="submit"] {
+    display: block;
+    background-color: #cb436e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.button-container .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.button-container .list-button {
+    background-color: #cccccc;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-container .update-button {
+    background-color: #4d79ff;
+    color: white;
+}
+
+
+/* update.css */
+.update_inner {
+    background-color: #f0ddea;
+    margin-top: 30px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    width: 60%;
+    display: grid;
+}
+
+.update_inner h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.update_inner h2 span {
+    color: #cb436e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0px 50px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 92%;
+    margin: 0px 40px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #cb436e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    padding: 10px 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #a12d53;
+}

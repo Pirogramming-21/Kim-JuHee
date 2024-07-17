@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div class="create">
+    <div class="create_inner">
+        <h2>💡Idea <span>Register</span>💡</h2>
+        <form action="/tools/create" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" placeholder="이름" />
+            </div>
+            <div class="form-group">
+                <label for="kindof">개발툴 종류:</label>
+                <input type="text" id="kindof" name="kindof" placeholder="종류" />
+            </div>
+            <div class="form-group">
+                <label for="descrip">아이디어 설명:</label>
+                <textarea id="descrip" name="descrip" cols="30" rows="10" placeholder="설명"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

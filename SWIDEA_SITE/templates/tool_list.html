@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Create Idea{% endblock %}
+
+{% block content %}
+<div class="post-grid">
+    {% for tool in tools %}
+        <div class="post-card">
+            <a href="/tools/{{ tool.id }}">
+                <h2>{{ tool.name }}</h2>
+            </a>
+            <p>예상 개발 툴: {{ tool.kindof }}</p>
+            <p>아이디어 관심도: {{ tool.descrip }}</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
