@@ -1,0 +1,12 @@
+<h1> 글 수정하기 </h1>
+
+<form action="/posts/{{post.id}}/update/" method="post">
+    {% csrf_token %}
+    <input name="title" placeholder="제목" /> <br />
+    <input name="user" placeholder="작성자" /> <br />
+    <textarea name="content" cols="30" rows="10" placeholder="내용"></textarea>
+    <input name="image_url" placeholder="이미지 URL" required /> <br/>
+    <div>
+        <input type="submit" value="수정완료">
+    </div>
+</form>

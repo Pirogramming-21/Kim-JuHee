@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7d6a50a6b2.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script src="{% static 'js/like.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__icon"><i class="fas fa-cog"></i></div>
+            <div class="header__username">pirogramming</div>
+            <div class="header__icon"><i class="fas fa-user-plus"></i></div>
+        </div>
+    </header>
+    <main>
+        <div class="profile">
+            <div class="profile__top">
+                <div class="profile__img">
+                    <img src="https://placekitten.com/300/500" alt="" />
+                </div>
+                <div class="profile__right">
+                    <div class="profile__username">pirogramming</div>
+                    <div class="profile__btn"><button>프로필 편집</button></div>
+                </div>
+            </div>
+            <div class="profile__bottom">
+                <span class="profile__name">김피로</span><br />
+                <span class="profile__info">인생은 짧습니다. <br />파이썬3를 사용하세요!!</span>
+            </div>
+        </div>
+        <div class="story">
+            <div class="story__container">
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum1/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum2/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum3/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum4/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum5/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum6/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum7/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum8/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum9/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+                <div class="story__content">
+                    <div class="story__img">
+                        <img src="https://picsum.photos/seed/picsum10/200/300" alt="" />
+                    </div>
+                    <div class="story__title">여행</div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content__container">
+                {% for post in posts %}
+                <div class="content__photo post-id-{{ post.id }}">
+                    <a href="/posts/{{post.id}}">
+                        <img src="{{ post.image_url }}" alt="{{ post.title }}" />
+                    </a>
+                    <button class="like-button" onclick="onClickLike({{ post.id }}, 'like')">
+                        <i class="ri-heart-3-fill"></i>
+                    </button>
+                    <span class="post__like-count"> 0</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__container">
+            <div class="footer__item"><i class="fas fa-home"></i></div>
+            <div class="footer__item"><i class="fas fa-search"></i></div>
+            <div class="footer__item"><a href="/posts/create"><i class="far fa-plus-square"></i></a></div>
+            <div class="footer__item"><i class="far fa-heart"></i></div>
+            <div class="footer__image"><img src="http://placekitten.com/300/300" alt="" /></div>
+        </div>
+    </footer>
+</body>
+</html>
