@@ -56,7 +56,7 @@
   **🧷숫자 야구 게임** </br>
   ![제목 없는 동영상 - Clipchamp로 제작](https://github.com/user-attachments/assets/34ec6761-d3cb-485e-bd9c-115b2e6b8329)
 
-### - 7/4 HTML, CSS, JS 종합 마무리
+### - 7/4(목) HTML, CSS, JS 종합 마무리
   오전, 오후: HTML, CSS, JS 종합 마무리 </br>
 
   * **다섯 번째 과제** </br>
@@ -64,4 +64,12 @@
   **🧷파이썬 코딩 도장 33~44장 풀기**</br>
 
   **🧷스톱워치 구현**
-  
+  ![Document - Chrome 2024-08-02 19-14-24](https://github.com/user-attachments/assets/cdaf611a-20ab-4f18-b806-e7f6b25e83cf)
+
+### - 7/6(토) 웹 개발 개론(피로그래밍 조언)/프로젝트 기획
+  오전: 웹 개발 개론(피로그래밍 선배님 조언) </br>
+  오후: 아이디어 기획과 협업(강의자료)
+
+  * **여섯 번째 과제** </br>
+
+  **🧷파이썬 술게임 만들기**</br>
