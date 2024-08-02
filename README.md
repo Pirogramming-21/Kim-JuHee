@@ -50,8 +50,18 @@
 
   * **네 번째 과제** </br>
 
-  **드림코딩 강의 수강 후, 쇼핑몰 미니게임 코딩**
+  **🧷드림코딩 강의 수강 후, 쇼핑몰 미니게임 만들기**
   ![Online Shopping - Chrome 2024-08-02 18-48-53](https://github.com/user-attachments/assets/3d4086ab-2979-4f96-9b0f-c4c68f0b1456)
 
-  **숫자 야구 게임**
+  **🧷숫자 야구 게임** </br>
+  ![제목 없는 동영상 - Clipchamp로 제작](https://github.com/user-attachments/assets/34ec6761-d3cb-485e-bd9c-115b2e6b8329)
+
+### - 7/4 HTML, CSS, JS 종합 마무리
+  오전, 오후: HTML, CSS, JS 종합 마무리 </br>
+
+  * **다섯 번째 과제** </br>
+  
+  **🧷파이썬 코딩 도장 33~44장 풀기**</br>
+
+  **🧷스톱워치 구현**
   
